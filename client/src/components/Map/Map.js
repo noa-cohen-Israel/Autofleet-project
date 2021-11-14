@@ -1,4 +1,4 @@
-import React, { useLayoutEffect ,useState,useCallback,useEffect} from 'react'
+import React, {useState,useCallback,useEffect} from 'react'
 import { GoogleMap, useJsApiLoader, Marker, Polygon } from '@react-google-maps/api';
 import { getLoctionVehicles } from '../../service/vehicles'
 import './Map.css'
@@ -15,8 +15,7 @@ export default function Map({updeteIDs,resetVehiclesIds}) {
   const [map, setMap] = useState(null)
   
   const [vehicleLocations, setVehicleLocations] = useState([])
-  const [selectedLocations, setSelectedLocations] = useState([])
-  // const [vehiclesIds, setVehiclesIds] = useState([])
+  const [selectedLocations] = useState([])
   const [drawPolygon, setDrawPolygon] = useState(false)
 
   const { isLoaded } = useJsApiLoader({
@@ -39,27 +38,14 @@ export default function Map({updeteIDs,resetVehiclesIds}) {
     setDrawPolygon(false)
     selectedLocations.push({lat:map.latLng.lat(), lng:map.latLng.lng()})
     setDrawPolygon(true)
-    // setMap(map)
   }, [])
- // async function onClick(event) {
-  //   let o=selectedLocations
-    
-  
- //  else{
-  //  setMap(null)
- //  }
-  //}
-// function searchVehiclesIds(){
-//     updeteIDs()
-     
-// }
+ 
 function cleanSelected(map){
   while(selectedLocations.length!=0){
     selectedLocations.pop()
   }
   setDrawPolygon(false)
   resetVehiclesIds([])
-  //setVehiclesIds([])
  setMap(map)
 }
   useEffect(() => {
@@ -96,9 +82,6 @@ function cleanSelected(map){
       <></>
     </GoogleMap>
     </div>
-      {/* <div>{vehiclesIds.map((v,index)=>{
-      return <div key={index}>{v}</div>})}
-    </div> */}
     </div>
   ) : <></>
 }
