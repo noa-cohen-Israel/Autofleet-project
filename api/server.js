@@ -11,11 +11,7 @@ let port = process.env.port || 5000;
 
 
 app.use('/vehicles', require('./src/vehicles'));
-// app.use('/orders', require('./src/orders'));
-// app.use('/products', require('./src/products'));
-// app.use('/areas', require('./src/areas'));
-// app.use('/shipment', require('./src/shipment'));
-// app.use('/seq', require('./src/seq'));
+
 
 
 app.use(function (req, res) {
@@ -23,5 +19,4 @@ app.use(function (req, res) {
 });
 
 app.listen(port, () => {
-  console.log('server run');
 });
