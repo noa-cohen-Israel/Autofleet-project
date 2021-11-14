@@ -1,9 +1,12 @@
 {
   "name": "example-create-react-app-express",
   "version": "1.0.0",
-  "scripts": {
-    "start": "concurrently \"cd api && npm start\" \"cd client && npm start\" ",
-    "install": "concurrently \"cd api && npm install\" \"cd client && npm install\" "
+  "scripts": {    
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+     "server": "nodemon server.js",
+     "client": "npm start --prefix client",
+    "heroku-postbuild":      "NPM_CONFIG_PRODUCTION=false npm install --prefix client        && npm run build --prefix client"  }
   },
   "dependencies": {
     "body-parser": "^1.18.3",
