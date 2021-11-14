@@ -2,8 +2,8 @@
   "name": "example-create-react-app-express",
   "version": "1.0.0",
   "scripts": {
-    "start": "\"concurrently \"cd api && npm start\" \"cd client && npm start\"",
-    "install": "\"concurrently \"cd api && npm install\" \"cd client && npm install\""
+    "start": "concurrently \"cd api && npm start\" \"cd client && npm start\" ",
+    "install": "concurrently \"cd api && npm install\" \"cd client && npm install\" "
   },
   "dependencies": {
     "body-parser": "^1.18.3",
