@@ -5,7 +5,7 @@ var router = express.Router();
 var pointInPolygon = require('point-in-polygon');
 
 var MongoClient = require('mongodb').MongoClient;
-let jsonData = require('../vehicles-location.json');
+//let jsonData = require('../vehicles-location.json');
 let vehiclesdb;
 
 
@@ -27,16 +27,12 @@ router.get('/', function (req, res) {
         .catch(error => console.error(error))
 });
 
-//////////add midlleware
-///check lenght array
+//Gets points on the map-{lat,lng} and returns the vehicles that are inside the polygon
 router.post('/polygon', function (req, res) {
    
     let polygon =req.body.map(location=>{
         return [location.lat,location.lng]
 });
-   //var polygon = [[51.3379755423855, 0.009269060011774855],
-  // [51.33025352590461, 0.38692408930864985],
-  // [51.16176243385727, 0.14110499751177485]];
 let vechileList=[];
     vehiclesdb.find().forEach(vehicle => {
         let location=vehicle.location;
