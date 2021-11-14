@@ -1,0 +1,11 @@
+.containerIds{
+overflow-y: scroll;
+  height: 500px;
+width:100%;
+align-items: center;
+}
+.itemIds{
+    width: 100%;
+    text-align: left;
+padding-left: 20px;
+}

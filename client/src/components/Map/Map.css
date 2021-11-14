@@ -1,0 +1,23 @@
+.mapButton{
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #f1f1f1;
+    color: black;
+    font-size: 16px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 40px;
+  }
+  
+  .mapButton:hover {
+    background-color: black;
+    color: white;
+}
+
+.divButton{
+    align-items: center;
+    width: 1000px;
+}
